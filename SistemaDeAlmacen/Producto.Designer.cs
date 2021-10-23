@@ -204,6 +204,7 @@ namespace SistemaDeAlmacen
             this.btnLimpiarP.TabIndex = 12;
             this.btnLimpiarP.Text = "Limpiar";
             this.btnLimpiarP.UseVisualStyleBackColor = false;
+            this.btnLimpiarP.Click += new System.EventHandler(this.btnLimpiarP_Click);
             // 
             // btnEliminarP
             // 

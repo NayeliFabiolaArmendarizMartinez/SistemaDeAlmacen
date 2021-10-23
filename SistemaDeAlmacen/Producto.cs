@@ -48,6 +48,11 @@ namespace SistemaDeAlmacen
             }
             catch { }
         }
-        //prueba de cambio
+
+        private void btnLimpiarP_Click(object sender, EventArgs e)
+        {
+            dgvProducto.Columns.Clear();
+        }
+        
     }
 }
