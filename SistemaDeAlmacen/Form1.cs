@@ -25,8 +25,7 @@ namespace SistemaDeAlmacen
             {
                 lbError.Visible = true;
                 this.DialogResult = DialogResult.None;
-                //prueba de cambios 
-                //segunda prueba
+
             }
         }
     }

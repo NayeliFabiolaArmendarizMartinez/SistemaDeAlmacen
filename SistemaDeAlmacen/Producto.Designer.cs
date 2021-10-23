@@ -30,6 +30,7 @@ namespace SistemaDeAlmacen
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.lblTitProductos = new System.Windows.Forms.Label();
             this.lbDatosP = new System.Windows.Forms.Label();
             this.lbLista = new System.Windows.Forms.Label();
@@ -37,14 +38,14 @@ namespace SistemaDeAlmacen
             this.lbDPA = new System.Windows.Forms.Label();
             this.lbDPCa = new System.Windows.Forms.Label();
             this.lbDPD = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtAlmacen = new System.Windows.Forms.TextBox();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnGuardarP = new System.Windows.Forms.Button();
             this.btnLimpiarP = new System.Windows.Forms.Button();
             this.btnEliminarP = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvProducto = new System.Windows.Forms.DataGridView();
             this.Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,9 +53,8 @@ namespace SistemaDeAlmacen
             this.lbBuscarPor = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,6 +66,18 @@ namespace SistemaDeAlmacen
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(797, 36);
             this.panel1.TabIndex = 0;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnSalir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSalir.Location = new System.Drawing.Point(694, 5);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(93, 28);
+            this.btnSalir.TabIndex = 18;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
             // 
             // lblTitProductos
             // 
@@ -140,33 +152,33 @@ namespace SistemaDeAlmacen
             this.lbDPD.TabIndex = 6;
             this.lbDPD.Text = "Descripción:";
             // 
-            // textBox1
+            // txtCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(155, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtCodigo.Location = new System.Drawing.Point(12, 112);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(155, 20);
+            this.txtCodigo.TabIndex = 7;
             // 
-            // textBox2
+            // txtAlmacen
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 279);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(155, 20);
-            this.textBox2.TabIndex = 8;
+            this.txtAlmacen.Location = new System.Drawing.Point(12, 279);
+            this.txtAlmacen.Name = "txtAlmacen";
+            this.txtAlmacen.Size = new System.Drawing.Size(155, 20);
+            this.txtAlmacen.TabIndex = 8;
             // 
-            // textBox3
+            // txtCategoria
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 225);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(155, 20);
-            this.textBox3.TabIndex = 9;
+            this.txtCategoria.Location = new System.Drawing.Point(12, 225);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(155, 20);
+            this.txtCategoria.TabIndex = 9;
             // 
-            // textBox4
+            // txtDescripcion
             // 
-            this.textBox4.Location = new System.Drawing.Point(12, 169);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(155, 20);
-            this.textBox4.TabIndex = 10;
+            this.txtDescripcion.Location = new System.Drawing.Point(12, 169);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(155, 20);
+            this.txtDescripcion.TabIndex = 10;
             // 
             // btnGuardarP
             // 
@@ -179,6 +191,7 @@ namespace SistemaDeAlmacen
             this.btnGuardarP.TabIndex = 11;
             this.btnGuardarP.Text = "Guardar";
             this.btnGuardarP.UseVisualStyleBackColor = false;
+            this.btnGuardarP.Click += new System.EventHandler(this.btnGuardarP_Click);
             // 
             // btnLimpiarP
             // 
@@ -203,23 +216,24 @@ namespace SistemaDeAlmacen
             this.btnEliminarP.TabIndex = 13;
             this.btnEliminarP.Text = "Eliminar";
             this.btnEliminarP.UseVisualStyleBackColor = false;
+            this.btnEliminarP.Click += new System.EventHandler(this.btnEliminarP_Click);
             // 
-            // dataGridView1
+            // dgvProducto
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvProducto.AllowUserToAddRows = false;
+            this.dgvProducto.AllowUserToDeleteRows = false;
+            this.dgvProducto.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column,
             this.Column2,
             this.Column1,
             this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(242, 77);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(520, 361);
-            this.dataGridView1.TabIndex = 14;
+            this.dgvProducto.Location = new System.Drawing.Point(242, 77);
+            this.dgvProducto.Name = "dgvProducto";
+            this.dgvProducto.ReadOnly = true;
+            this.dgvProducto.Size = new System.Drawing.Size(520, 361);
+            this.dgvProducto.TabIndex = 14;
             // 
             // Column
             // 
@@ -280,18 +294,6 @@ namespace SistemaDeAlmacen
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnSalir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalir.Location = new System.Drawing.Point(694, 5);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(93, 28);
-            this.btnSalir.TabIndex = 18;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            // 
             // Producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,14 +303,14 @@ namespace SistemaDeAlmacen
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.lbBuscarPor);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvProducto);
             this.Controls.Add(this.btnEliminarP);
             this.Controls.Add(this.btnLimpiarP);
             this.Controls.Add(this.btnGuardarP);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.txtCategoria);
+            this.Controls.Add(this.txtAlmacen);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lbDPD);
             this.Controls.Add(this.lbDPCa);
             this.Controls.Add(this.lbDPA);
@@ -320,7 +322,7 @@ namespace SistemaDeAlmacen
             this.Text = "Producto";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,14 +338,14 @@ namespace SistemaDeAlmacen
         private System.Windows.Forms.Label lbDPA;
         private System.Windows.Forms.Label lbDPCa;
         private System.Windows.Forms.Label lbDPD;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtAlmacen;
+        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnGuardarP;
         private System.Windows.Forms.Button btnLimpiarP;
         private System.Windows.Forms.Button btnEliminarP;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProducto;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
