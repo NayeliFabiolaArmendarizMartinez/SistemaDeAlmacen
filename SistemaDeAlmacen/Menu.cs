@@ -28,13 +28,5 @@ namespace SistemaDeAlmacen
             MenuProductos frm= new MenuProductos();
             frm.Show();
         }
-
-        private void Menu_Load(object sender, EventArgs e)
-        {
-            Login obj = new Login();
-
-            if (obj.ShowDialog() != DialogResult.OK)
-                this.Close();
-        }
     }
 }

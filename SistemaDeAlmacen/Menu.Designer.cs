@@ -158,7 +158,6 @@ namespace SistemaDeAlmacen
             this.Controls.Add(this.lbTitulo);
             this.Name = "Menuu";
             this.Text = "Menu";
-            this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

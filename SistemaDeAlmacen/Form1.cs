@@ -12,7 +12,8 @@ namespace SistemaDeAlmacen
 {
     public partial class Login : Form
     {
-        Menuu logeo;
+        //Menuu logeo;
+        //Menuu acceso = new Menuu();
         public Login()
         {
             InitializeComponent();
@@ -22,12 +23,16 @@ namespace SistemaDeAlmacen
         {
             //Menuu m = new Menuu();
 
-            if (tbxUsuario.Text == "Admin" && tbxContraseña.Text == "1234")
+            if (tbxUsuario.Text == "Admin" && (tbxContraseña.Text == "1234"))
             {
 
                 this.Hide();
-                logeo = new Menuu();
-                logeo.ShowDialog();
+                Menuu frm = new Menuu();
+                frm.Show();
+
+                /*this.Hide();
+                acceso = new Menuu();
+                acceso.ShowDialog();*/
 
                 //this.DialogResult = DialogResult;
                 //this.Hide();
@@ -38,8 +43,9 @@ namespace SistemaDeAlmacen
 
             else
             {
-                lbError.Visible = true;
-                this.DialogResult = DialogResult.None;
+                MessageBox.Show("Datos erróneos, intente de nuevo");
+                tbxUsuario.Text = "";
+                tbxContraseña.Text = "";
 
             }
         }
