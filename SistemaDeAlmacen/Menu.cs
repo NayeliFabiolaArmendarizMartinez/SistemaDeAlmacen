@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SistemaDeAlmacen
 {
-    public partial class Menu : Form
+    public partial class Menuu : Form
     {
-        public Menu()
+        public Menuu()
         {
             InitializeComponent();
         }

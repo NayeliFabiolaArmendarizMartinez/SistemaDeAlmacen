@@ -12,6 +12,7 @@ namespace SistemaDeAlmacen
 {
     public partial class Login : Form
     {
+        Menuu logeo;
         public Login()
         {
             InitializeComponent();
@@ -19,8 +20,22 @@ namespace SistemaDeAlmacen
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            if (tbxUsuario.Text == "Administrador" && tbxContraseña.Text == "1234")
-                this.DialogResult = DialogResult.OK;
+            //Menuu m = new Menuu();
+
+            if (tbxUsuario.Text == "Admin" && tbxContraseña.Text == "1234")
+            {
+
+                this.Hide();
+                logeo = new Menuu();
+                logeo.ShowDialog();
+
+                //this.DialogResult = DialogResult;
+                //this.Hide();
+                // m.ShowDialog();
+
+            }
+
+
             else
             {
                 lbError.Visible = true;

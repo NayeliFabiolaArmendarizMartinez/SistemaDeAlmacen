@@ -1,7 +1,7 @@
 ﻿
 namespace SistemaDeAlmacen
 {
-    partial class Menu
+    partial class Menuu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace SistemaDeAlmacen
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menuu));
             this.lbTitulo = new System.Windows.Forms.Label();
             this.btnInventario = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
@@ -143,7 +143,7 @@ namespace SistemaDeAlmacen
             this.btnProveedores.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnProveedores.UseVisualStyleBackColor = false;
             // 
-            // Menu
+            // Menuu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -156,7 +156,7 @@ namespace SistemaDeAlmacen
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnInventario);
             this.Controls.Add(this.lbTitulo);
-            this.Name = "Menu";
+            this.Name = "Menuu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.ResumeLayout(false);

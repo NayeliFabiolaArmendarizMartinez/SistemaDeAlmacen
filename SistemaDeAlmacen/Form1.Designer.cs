@@ -104,6 +104,7 @@ namespace SistemaDeAlmacen
             this.lbError.Size = new System.Drawing.Size(164, 14);
             this.lbError.TabIndex = 6;
             this.lbError.Text = "Usuario o Contraseña incorrecta";
+            this.lbError.Visible = false;
             // 
             // Login
             // 
